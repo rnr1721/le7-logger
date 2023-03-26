@@ -1,8 +1,8 @@
 <?php
 
-use Core\Logger\Interfaces\SimpleLogger;
+use Core\Interfaces\SimpleLogger;
 use Core\Logger\Adapters\LoggerRouteFile;
-use Core\Logger\Interfaces\LoggerFactory;
+use Core\Interfaces\LoggerFactory;
 use Core\Logger\LoggerFactoryGeneric;
 
 require_once 'vendor/autoload.php';

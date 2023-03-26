@@ -15,7 +15,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Core\\Logger\\": "src"
+            "Core\\": "src"
         }
     },
     "require": {
@@ -25,5 +25,13 @@
     "require-dev": {
         "vimeo/psalm": "^5.7",
         "phpunit/phpunit": "^10.0"
+    },
+    "scripts": {
+        "test": [
+            "@phpunit",
+            "@psalm"
+        ],
+        "phpunit": "phpunit",
+        "psalm": "psalm"
     }
 }

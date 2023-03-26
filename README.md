@@ -16,6 +16,12 @@
 composer require rnr1721/le7-logger
 ```
 
+## Tests
+
+```shell
+composer test
+```
+
 ## How use it?
 
 ```php

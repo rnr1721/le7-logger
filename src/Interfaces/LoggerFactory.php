@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Logger\Interfaces;
+namespace Core\Interfaces;
 
 interface LoggerFactory
 {

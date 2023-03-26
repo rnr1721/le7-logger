@@ -3,7 +3,7 @@
 namespace Core\Logger;
 
 use Core\Logger\LoggerRoute;
-use Core\Logger\Interfaces\SimpleLogger;
+use Core\Interfaces\SimpleLogger;
 use Psr\Log\AbstractLogger;
 use Stringable;
 

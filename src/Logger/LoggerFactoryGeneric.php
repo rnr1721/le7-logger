@@ -2,8 +2,8 @@
 
 namespace Core\Logger;
 
-use Core\Logger\Interfaces\LoggerFactory;
-use Core\Logger\Interfaces\SimpleLogger;
+use Core\Interfaces\LoggerFactory;
+use Core\Interfaces\SimpleLogger;
 use Core\Logger\Adapters\LoggerRouteNull;
 use Core\Logger\Adapters\LoggerRouteFile;
 
