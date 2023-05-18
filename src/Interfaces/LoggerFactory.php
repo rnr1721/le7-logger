@@ -14,6 +14,13 @@ interface LoggerFactory
     public function logFile(string $filename): SimpleLogger;
 
     /**
+     * Simple log to std
+     * Info will go to stdout, errors go to stderr
+     * @return SimpleLogger
+     */
+    public function logStd(): SimpleLogger;
+    
+    /**
      * Log adapter stub. Do not make anything;
      * @return SimpleLogger
      */

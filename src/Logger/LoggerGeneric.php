@@ -10,8 +10,19 @@ use Stringable;
 class LoggerGeneric extends AbstractLogger implements SimpleLogger
 {
 
+    /**
+     * Array of logger routes for broadcast
+     * @var array
+     */
     private array $broadcast = array();
 
+    /**
+     * Log the message
+     * @param mixed $level Log level
+     * @param Stringable|string $message Message
+     * @param array $context Context
+     * @return void
+     */
     public function log($level, Stringable|string $message, array $context = []): void
     {
         foreach ($this->broadcast as $route) {
@@ -25,6 +36,11 @@ class LoggerGeneric extends AbstractLogger implements SimpleLogger
         }
     }
 
+    /**
+     * Add broadcast item to logging
+     * @param LoggerRoute $route Route
+     * @return self
+     */
     public function addBroadcast(LoggerRoute $route): self
     {
         $this->broadcast[] = $route;

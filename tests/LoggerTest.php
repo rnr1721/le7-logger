@@ -1,7 +1,9 @@
 <?php
 
+use Psr\Log\LogLevel;
 use Core\Interfaces\SimpleLogger;
 use Core\Logger\Adapters\LoggerRouteFile;
+use Core\Logger\Adapters\LoggerRouteStd;
 use Core\Interfaces\LoggerFactory;
 use Core\Logger\LoggerFactoryGeneric;
 
@@ -65,6 +67,21 @@ class LoggerTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($logger instanceof SimpleLogger);
     }
 
+    public function testLogStd()
+    {
+        $loggerRouteStd = new LoggerRouteStd(['echo' => true]);
+        $loggerRouteStd->setDateFormat('Y-m-d');
+        $loggerRouteStd->setTemplate("{date} {level} {message} {context}");
+
+        ob_start();
+        $loggerRouteStd->log(LogLevel::INFO, 'This is an info message.');
+        $output = ob_get_clean();
+        
+        $expected = date('Y-m-d') . ' info This is an info message.';
+        $this->expectOutputString($expected);
+        echo $output;
+    }
+    
     public function getLogFile(string $filename = 'log.txt')
     {
         $ds = DIRECTORY_SEPARATOR;

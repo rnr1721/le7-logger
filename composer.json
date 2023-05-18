@@ -1,6 +1,6 @@
 {
     "name": "rnr1721/le7-logger",
-    "description": "Logger module for le7 PHP MVC framework or any PHP project",
+    "description": "PSR Logger module for le7 PHP MVC framework or any PHP project",
     "keywords": ["le7", "le7-framework", "framework", "logger", "component", "psr-3"],
     "authors": [
         {

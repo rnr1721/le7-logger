@@ -6,9 +6,16 @@ use Psr\Log\AbstractLogger;
 use Psr\Log\LoggerInterface;
 use \DateTime;
 
+/**
+ * Abstract logger route, the father of all routes
+ */
 abstract class LoggerRoute extends AbstractLogger implements LoggerInterface
 {
 
+    /**
+     * If route enable
+     * @var bool
+     */
     protected bool $isEnable = true;
 
     /**
@@ -66,8 +73,7 @@ abstract class LoggerRoute extends AbstractLogger implements LoggerInterface
 
     /**
      * Set default date format
-     * Default is Y-m-d H:i
-     * @param string $dateFormat Date format
+     * @param string $dateFormat Date format. Default: Y-m-d H:i
      * @return self
      */
     public function setDateFormat(string $dateFormat = 'Y-m-d H:i'): self
