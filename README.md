@@ -7,7 +7,7 @@
 
 ## What it can?
 
-- Log to any destination (need to write similar adapter), by default present file and null
+- Log to any destination (need to write similar adapter), by default present file, std and null
 - Write more than one destination (for example in two files similarry or to file and to db)
 
 ## Installation
@@ -30,6 +30,7 @@ use Core\Logger\LoggerFactoryGeneric;
 
     $factory = new LoggerFactoryGeneric();
 
+    // $log = $this->factory->logStd(); - for docker etc
     $log = $this->factory->logFile('/home/www/example.com/myproject/log.txt');
 
     // Use it as any PSR logger
