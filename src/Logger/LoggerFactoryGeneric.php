@@ -2,21 +2,21 @@
 
 namespace Core\Logger;
 
-use Core\Interfaces\LoggerFactory;
-use Core\Interfaces\SimpleLogger;
+use Core\Interfaces\LoggerFactoryInterface;
+use Core\Interfaces\SimpleLoggerInterface;
 use Core\Logger\Adapters\LoggerRouteStd;
 use Core\Logger\Adapters\LoggerRouteNull;
 use Core\Logger\Adapters\LoggerRouteFile;
 
-class LoggerFactoryGeneric implements LoggerFactory
+class LoggerFactoryGeneric implements LoggerFactoryInterface
 {
 
     /**
      * log to file
      * @param string $filename
-     * @return SimpleLogger
+     * @return SimpleLoggerInterface
      */
-    public function logFile(string $filename): SimpleLogger
+    public function logFile(string $filename): SimpleLoggerInterface
     {
         $logger = new LoggerGeneric();
         $logger->addBroadcast(new LoggerRouteFile(['filePath' => $filename]));
@@ -26,9 +26,9 @@ class LoggerFactoryGeneric implements LoggerFactory
     /**
      * log to STD
      * @param string $filename
-     * @return SimpleLogger
+     * @return SimpleLoggerInterface
      */
-    public function logStd(): SimpleLogger
+    public function logStd(): SimpleLoggerInterface
     {
         $logger = new LoggerGeneric();
         $logger->addBroadcast(new LoggerRouteStd());
@@ -37,16 +37,16 @@ class LoggerFactoryGeneric implements LoggerFactory
 
     /**
      * Log to null
-     * @return SimpleLogger
+     * @return SimpleLoggerInterface
      */
-    public function logNull(): SimpleLogger
+    public function logNull(): SimpleLoggerInterface
     {
         $logger = new LoggerGeneric();
         $logger->addBroadcast(new LoggerRouteNull());
         return $logger;
     }
 
-    public function getLogger(): SimpleLogger
+    public function getLogger(): SimpleLoggerInterface
     {
         return new LoggerGeneric();
     }

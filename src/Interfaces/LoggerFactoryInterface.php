@@ -2,34 +2,34 @@
 
 namespace Core\Interfaces;
 
-interface LoggerFactory
+interface LoggerFactoryInterface
 {
 
     /**
      * Simple log to some file
      * The file will created if not exists
      * @param string $filename Path to file
-     * @return SimpleLogger
+     * @return SimpleLoggerInterface
      */
-    public function logFile(string $filename): SimpleLogger;
+    public function logFile(string $filename): SimpleLoggerInterface;
 
     /**
      * Simple log to std
      * Info will go to stdout, errors go to stderr
-     * @return SimpleLogger
+     * @return SimpleLoggerInterface
      */
-    public function logStd(): SimpleLogger;
+    public function logStd(): SimpleLoggerInterface;
     
     /**
      * Log adapter stub. Do not make anything;
-     * @return SimpleLogger
+     * @return SimpleLoggerInterface
      */
-    public function logNull(): SimpleLogger;
+    public function logNull(): SimpleLoggerInterface;
 
     /**
      * Get logger without imported adapter
      * You can make plug own that extends of LoggerRoute
-     * @return SimpleLogger
+     * @return SimpleLoggerInterface
      */
-    public function getLogger(): SimpleLogger;
+    public function getLogger(): SimpleLoggerInterface;
 }

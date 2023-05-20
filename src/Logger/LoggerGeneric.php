@@ -3,11 +3,11 @@
 namespace Core\Logger;
 
 use Core\Logger\LoggerRoute;
-use Core\Interfaces\SimpleLogger;
+use Core\Interfaces\SimpleLoggerInterface;
 use Psr\Log\AbstractLogger;
 use Stringable;
 
-class LoggerGeneric extends AbstractLogger implements SimpleLogger
+class LoggerGeneric extends AbstractLogger implements SimpleLoggerInterface
 {
 
     /**

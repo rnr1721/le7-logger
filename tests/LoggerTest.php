@@ -1,10 +1,10 @@
 <?php
 
 use Psr\Log\LogLevel;
-use Core\Interfaces\SimpleLogger;
+use Core\Interfaces\SimpleLoggerInterface;
 use Core\Logger\Adapters\LoggerRouteFile;
 use Core\Logger\Adapters\LoggerRouteStd;
-use Core\Interfaces\LoggerFactory;
+use Core\Interfaces\LoggerFactoryInterface;
 use Core\Logger\LoggerFactoryGeneric;
 
 require_once 'vendor/autoload.php';
@@ -13,7 +13,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 class LoggerTest extends PHPUnit\Framework\TestCase
 {
 
-    private LoggerFactory $factory;
+    private LoggerFactoryInterface $factory;
 
     protected function setUp(): void
     {
@@ -64,7 +64,7 @@ class LoggerTest extends PHPUnit\Framework\TestCase
         $logger = $this->factory->logNull();
         $logger->alert("alert message");
         $logger->info("info message");
-        $this->assertTrue($logger instanceof SimpleLogger);
+        $this->assertTrue($logger instanceof SimpleLoggerInterface);
     }
 
     public function testLogStd()

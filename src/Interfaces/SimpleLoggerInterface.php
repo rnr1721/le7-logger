@@ -5,7 +5,7 @@ namespace Core\Interfaces;
 use Core\Logger\LoggerRoute;
 use Psr\Log\LoggerInterface;
 
-interface SimpleLogger extends LoggerInterface
+interface SimpleLoggerInterface extends LoggerInterface
 {
 
     /**
